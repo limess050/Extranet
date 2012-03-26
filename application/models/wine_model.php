@@ -127,12 +127,12 @@ class Wine_model extends CI_Model
 	 * Get all wines under given parameters
 	 * 
 	 * This method is a general control function that uses other internal functions
-	 * to acquire information about the brand. It will optionally join the wine permissions table.
+	 * to acquire information about the wine. It will optionally join the wine permissions table.
 	 * 
 	 * @access	public
 	 * @param	int	brand id. If 0 don't search by brand_id
 	 * @param	bool	whether to join the permissions table or not
-	 * @return	array	brand data.
+	 * @return	array	wine data.
 	 **/
 	public function get_all_wines($brand_id = 0, $join_permissions = FALSE)
 	{
