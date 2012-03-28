@@ -115,8 +115,8 @@ class Program_model extends CI_Model
 	 * to acquire information about the program. It will optionally join the program permissions table.
 	 * 
 	 * @access	public
-	 * @param	int	program id
-	 * @param	bool	whether to join the permissions table or not
+	 * @param	int		program id
+	 * @param	bool		whether to join the permissions table or not
 	 * @return	array	program data.
 	 **/
 	public function get_program($program_id, $join_permissions = FALSE)
@@ -131,8 +131,8 @@ class Program_model extends CI_Model
 	 * to acquire information about the program. It will optionally join the program permissions table.
 	 * 
 	 * @access	public
-	 * @param	int	brand id. If 0 don't search by brand_id
-	 * @param	bool	whether to join the permissions table or not
+	 * @param	int		brand id. If 0 don't search by brand_id
+	 * @param	bool		whether to join the permissions table or not
 	 * @return	array	program data.
 	 **/
 	public function get_all_programs($brand_id = 0, $join_permissions = FALSE)
