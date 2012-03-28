@@ -12,9 +12,10 @@ class Wine_model extends CI_Model
 	 * @access	public
 	 * @param	int	associated brand id
 	 * @param	string	wine name
+	 * @param	array	wine permission  key/value: (sort_number=>int, display=>string, stg=>int)
 	 * @return	int	wine id on success or 0 on failure
 	 **/
-	public function create_wine($brand_id, $name)
+	public function create_wine($brand_id, $name, $permission_data)
 	{
 		//$this->insert_wine();
 		//$this->insert_wine_permissions();

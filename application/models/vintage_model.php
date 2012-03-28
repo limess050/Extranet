@@ -13,10 +13,11 @@ class Vintage_model extends CI_Model
 	 * @param	int	associated brand id
 	 * @param	int	associated wine id
 	 * @param	string	vintage name
-	 * @param	array	vintage text fields (description, tasting_notes, winemaking, region_vineyards, food_pairings, analysis)
+	 * @param	array	vintage text fields key/value:(description=>string, tasting_notes=>string, winemaking=>string, region_vineyards=>string, food_pairings=>string, analysis=>string)
+	 * @param	array	vintage permission fields key/value: (sort_number=>int, display=>string, stg=>int)
 	 * @return	int	vintage id on success or 0 on failure
 	 **/
-	public function create_vintage($brand_id, $wine_id, $name, $text_data)
+	public function create_vintage($brand_id, $wine_id, $name, $text_data, $permission_data)
 	{
 		//$this->insert_vintage();
 		//$this->insert_vintage_permissions();
@@ -31,7 +32,7 @@ class Vintage_model extends CI_Model
 	 * @param	int	brand id
 	 * @param	int	wine id
 	 * @param	string	vintage name
-	 * @param	array	vintage text fields (description, tasting_notes, winemaking, region_vineyards, food_pairings, analysis)
+	 * @param	array	vintage text fields key/value:(description=>string, tasting_notes=>string, winemaking=>string, region_vineyards=>string, food_pairings=>string, analysis=>string)
 	 * @return	int		this will return a 0 on failure, or the vintage id on success
 	 **/
 	private function insert_vintage($brand_id, $wine_id, $name, $text_data)
@@ -67,13 +68,11 @@ class Vintage_model extends CI_Model
 	 * @param int	new associated wine id
 	 * @param int	new associated brand id
 	 * @param	string	new vintage name
-	 * @param	array	new vintage text fields (description, tasting_notes, winemaking, region_vineyards, food_pairings, analysis)
-	 * @param	int	new sort number
-	 * @param	string	new display status
-	 * @param	bool	new stg status
+	 * @param	array	vintage text fields key/value:(description=>string, tasting_notes=>string, winemaking=>string, region_vineyards=>string, food_pairings=>string, analysis=>string)
+	 * @param	array	vintage permission fields key/value: (sort_number=>int, display=>string, stg=>int)
 	 * @return	bool	success or failure
 	 **/
-	public function modify_vintage($vintage_id, $wine_id, $brand_id, $name, $text_data, $sort_number, $display, $stg)
+	public function modify_vintage($vintage_id, $wine_id, $brand_id, $name, $text_data, $permission_data)
 	{
 		//$this->update_vintage();
 		//$this->update_cms_vintage_permissions();
@@ -86,10 +85,10 @@ class Vintage_model extends CI_Model
 	 * 
 	 * @access	private
 	 * @param int	vintage id
-	 * @param int	wine id
+	 * @param int	new associated wine id
 	 * @param	string	new associated brand id
 	 * @param	string	new wine name
-	 * @param	array	new vintage text fields (description, tasting_notes, winemaking, region_vineyards, food_pairings, analysis)
+	 * @param	array	vintage text fields key/value:(description=>string, tasting_notes=>string, winemaking=>string, region_vineyards=>string, food_pairings=>string, analysis=>string)
 	 * @return	bool	success or failure
 	 **/
 	private function update_vintage($vintage_id, $wine_id, $brand_id, $name, $text_data)
